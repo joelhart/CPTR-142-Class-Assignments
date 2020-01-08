@@ -3,8 +3,8 @@
  * In-Class Exercise: Enumeration Data Types
  *
  * File Name: enum.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo
+ * Username:  fairka
  * Course:    CPTR 142
  */
 
@@ -12,12 +12,39 @@
 using namespace std;
 
 int main() {
-   enum City {CITY_SEATTLE, CITY_SPOKANE, CITY_PENDLETON, CITY_PORTLAND};
-   City myCity;
 
-   myCity = CITY_SPOKANE;
+  enum City {
+    CITY_SEATTLE,
+    CITY_SPOKANE,
+    CITY_PENDLETON,
+    CITY_PORTLAND,
+    CITY_NEB
+  };
+  City myCity;
 
-   /* Print "OR", "WA", or "??" based on location of myCity  */
+  myCity = CITY_SPOKANE;
 
-   return 0;
+cout << myCity << "is in ";
+
+  /* Print "OR", "WA", or "??" based on location of myCity  */
+  switch (myCity) {
+  case CITY_SEATTLE:
+    cout << "WA" << endl;
+    break;
+  case CITY_SPOKANE:
+    cout << "WA" << endl;
+    break;
+  case CITY_PENDLETON:
+    cout << "OR" << endl;
+    break;
+  case CITY_PORTLAND:
+    cout << "OR" << endl;
+    break;
+  default:
+    cout << "??" << endl;
+    break;
+  }
+
+  return 0;
 }
+   
