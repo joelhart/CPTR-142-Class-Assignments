@@ -3,7 +3,7 @@
  * Checkpoint Assignment: Building a Gradebook for CPTR142
  *
  * File Name:       gradebook.cpp
- * Name:            ?
+ * Name:            hartjo
  * Course:          CPTR 142
  * Date:            January 9, 2020
  *
@@ -110,6 +110,10 @@ int main() {
     cin >> menu;
 
     // TODO Check for invalid menu input.
+    if (cin.fail()) {
+      cin.clear();
+      cin.ignore(1000, '\n');
+    }
 
     // menu options
     switch (menu) {
@@ -145,5 +149,87 @@ void displayGradebook(string names[], long ids[],
       cout << homeworkScores[row][col] << " ";
     }
     cout << "\n";
+  }
+}
+
+int getNextResubmission(char homeworkScores[], int size) {
+  for (int i = 0; i < size; i++) {
+    if (homeworkScores[i] == 'R' || homeworkScores[i] == 'N') {
+      return i;
+    }
+  }
+  for (int i = 0; i < size; i++) {
+    if (homeworkScores[i] == 'M') {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+void displaySuggestedResubmissions(string names[],
+                                   char homeworkScores[][NUMBER_OF_SCORES],
+                                   int size) {
+
+  for (int i = 0; i < size; i++) {
+    int result;
+    result = getNextResubmission(homeworkScores[NUMBER_OF_SCORES], size);
+    for (int i = 0; i < size; i++) {
+      if (result > 0) {
+        cout << names[i] << " should resubmit homework " << result << endl;
+      }
+
+      if (result == -1) {
+        cout << names[i] << " has no homework to resubmit" << endl;
+      }
+    }
+  }
+}
+
+char getHomeworkGrade(int eTotal, int mTotal, int rTotal, int nTotal) {
+  if (eTotal + mTotal == 14 && eTotal >= 10) {
+    return 'A';
+  } else if (eTotal + mTotal == 13 && eTotal >= 5) {
+    return 'B';
+  } else if (eTotal + mTotal == 11) {
+    return 'C';
+  } else if (eTotal + mTotal == 8) {
+    return 'D';
+  } else if (eTotal + mTotal <= 7) {
+    return 'F';
+  }
+
+  return 'F';
+}
+
+void getGradeTotals(char homeworkScores[], int size, int &eTotal, int &mTotal,
+                    int &rTotal, int &nTotal) {
+  for (int i = 0; i < size; i++) {
+    switch (homeworkScores[i]) {
+    case 'E':
+      eTotal++;
+      break;
+
+    case 'M':
+      mTotal++;
+      break;
+
+    case 'R':
+      rTotal++;
+      break;
+
+    case 'N':
+      nTotal++;
+      break;
+    }
+  }
+}
+
+void displayGrades(string names[], char homeworkScores[][NUMBER_OF_SCORES],
+                   int size) {
+  cout << "Student Grades" << endl;
+  for (int i = 0; i < size; i++) {
+    cout << names[i] << "   "
+         << getHomeworkGrade(int eTotal, int mTotal, int rTotal, int nTotal)
   }
 }

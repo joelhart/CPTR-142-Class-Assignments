@@ -3,70 +3,89 @@
  * In-Class Exercise: C-Strings
  *
  * File Name: c_string.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo
+ * Username:  fairka
  * Course:    CPTR 142
  */
 
-#include <iostream> // for cin and cout
 #include <cstring>  // for strlen
+#include <iostream> // for cin and cout
 using namespace std;
 
 // function prototype (declaration)
-void countThings(char cString[], int &alphaCount, int &digitCount, int &punctCount);
+void countThings(char cString[], int &alphaCount, int &digitCount,
+                 int &punctCount);
 
 /*====================================================================
  * Main program
  */
 int main() {
 
-	//	FIRST EXERCISE
+  //	FIRST EXERCISE
 
-	// define variables
-	char firstName[20], lastName[20], lastCommaFirst[40];
-	int size;
-	bool flag;
+  // define variables
+  char firstName[20], lastName[20], lastCommaFirst[40];
+  int size;
+  bool flag;
 
-	// collect user input
-	cout << "Enter your first and last name separated by a space: ";
-	cin >> firstName >> lastName;
-	cout << "First name is: " << firstName << endl;
-	cout << "Last name is:  " << lastName << endl;
+  // collect user input
+  cout << "Enter your first and last name separated by a space: ";
+  cin >> firstName >> lastName;
+  cout << "First name is: " << firstName << endl;
+  cout << "Last name is:  " << lastName << endl;
 
-	// TODO: combine into new variable as "Last, First"
+  // TODO: combine into new variable as "Last, First"
+  strcpy(lastCommaFirst, lastName);
+  strcat(lastCommaFirst, ", ");
+  strcat(lastCommaFirst, firstName);
 
-	cout << "Full name is:  " << lastCommaFirst << endl;
+  cout << "Full name is:  " << lastCommaFirst << endl;
 
+  // TODO: calculate name length
+  size = strlen(lastCommaFirst);
 
-	// TODO: calculate name length
+  cout << "Name size is:  " << size << endl;
 
-	cout << "Name size is:  " << size << endl;
+  // TODO: compare first and last names for being the same
+  flag = strcmp(firstName, lastName);
 
+  if (!flag) {
+    cout << "What were your parents thinking!?" << endl;
+  } else {
+    cout << "Not so confusing!" << endl;
+  }
 
-	// TODO: compare first and last names for being the same
+  //	SECOND EXERCISE
 
-	if (flag) {
-		cout << "What were your parents thinking!?" << endl;
-	} else {
-		cout << "Not so confusing!" << endl;
-	}
+  // define variables
+  int letters = 0, digits = 0, punctuation = 0;
+  char theString[] = "The 33rd was crazy, man!";
 
+  // TODO: call function to count things
+  countThings(theString, letters, digits,
+                 punctuation);
 
-	//	SECOND EXERCISE
+  cout << endl << "SECOND EXERCISE" << endl;
+  cout << "The string has " << letters << " letters." << endl;
+  cout << "The string has " << digits << " digits." << endl;
+  cout << "The string has " << punctuation << " punctuation characters."
+       << endl;
 
-	// define variables
-	int letters = 0, digits = 0, punctuation = 0;
-	char theString[] = "The 33rd was crazy, man!";
-
-	// TODO: call function to count things
-
-	cout << endl << "SECOND EXERCISE" << endl;
-	cout << "The string has " << letters << " letters." << endl;
-	cout << "The string has " << digits << " digits." << endl;
-	cout << "The string has " << punctuation << " punctuation characters." << endl;
-
-    return 0;
+  return 0;
 }
 
 // TODO: Define (implement) the countThings() function
-
+void countThings(char cString[], int &alphaCount, int &digitCount,
+                 int &punctCount) {
+  for (int i = 0; i < strlen(cString); i++) {
+    if (isalpha(cString[i])) {
+      alphaCount++;
+    }
+    if (ispunct(cString[i])) {
+      punctCount++;
+    }
+    if (isdigit(cString[i])) {
+      digitCount++;
+    }
+  }
+}
