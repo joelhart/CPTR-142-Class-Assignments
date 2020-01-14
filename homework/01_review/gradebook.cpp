@@ -175,7 +175,7 @@ void displaySuggestedResubmissions(string names[],
     int result = 0;
     result = getNextResubmission(homeworkScores[NUMBER_OF_SCORES], size);
     for (int i = 0; i < size; i++) {
-      result = getNextResubmission(homeworkScores[i], size);
+      result = getNextResubmission(homeworkScores[], size);
       if (result != -1) {
         cout << names[i] << " should resubmit homework " << result << endl;
       } else {
