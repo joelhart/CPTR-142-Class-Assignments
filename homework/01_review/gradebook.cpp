@@ -191,9 +191,9 @@ char getHomeworkGrade(int eTotal, int mTotal, int rTotal, int nTotal) {
     return 'A';
   } else if (eTotal + mTotal >= 13 && eTotal >= 5) {
     return 'B';
-  } else if (eTotal + mTotal == 11) {
+  } else if (eTotal + mTotal >= 11) {
     return 'C';
-  } else if (eTotal + mTotal == 8) {
+  } else if (eTotal + mTotal >= 8) {
     return 'D';
   }
   return 'F';
