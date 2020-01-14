@@ -222,28 +222,36 @@ void getGradeTotals(char homeworkScores[], int size, int &eTotal, int &mTotal,
 
 void displayGrades(string names[], char homeworkScores[][NUMBER_OF_SCORES],
                    int size) {
-  int numbE = 0;
-  int numbM = 0;
-  int numbR = 0;
-  int numbN = 0;
+
   cout << "Student Grades" << endl;
   for (int i = 0; i < size; i++) {
-    if (names[i] == "Ava") {
+    int numbE = 0;
+    int numbM = 0;
+    int numbR = 0;
+    int numbN = 0;
+
+    getGradeTotals(homeworkScores[i], NUMBER_OF_SCORES, numbE, numbM, numbR,
+                   numbN) if (names[i] == "Ava") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
-    } else if (names[i] == "Brook") {
+    }
+    else if (names[i] == "Brook") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
-    } else if (names[i] == "Caryon") {
+    }
+    else if (names[i] == "Caryon") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
-    } else if (names[i] == "Daniel") {
+    }
+    else if (names[i] == "Daniel") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
-    } else if (names[i] == "Emma") {
+    }
+    else if (names[i] == "Emma") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
-    } else if (names[i] == "Perfect") {
+    }
+    else if (names[i] == "Perfect") {
       cout << names[i] << "	"
            << getHomeworkGrade(numbE, numbM, numbR, numbN) << endl;
     }
