@@ -113,6 +113,7 @@ int main() {
     if (cin.fail()) {
       cin.clear();
       cin.ignore(1000, '\n');
+      cout << "Invalid choice.";
     }
 
     // menu options
@@ -175,7 +176,7 @@ void displaySuggestedResubmissions(string names[],
     int result = 0;
     result = getNextResubmission(homeworkScores[NUMBER_OF_SCORES], size);
     for (int i = 0; i < size; i++) {
-      result = getNextResubmission(homeworkScores[], size);
+      result = getNextResubmission(homeworkScores[i], size);
       if (result != -1) {
         cout << names[i] << " should resubmit homework " << result << endl;
       } else {
