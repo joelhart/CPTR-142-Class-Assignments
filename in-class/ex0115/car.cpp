@@ -3,8 +3,8 @@
  * In-Class Exercise: Class definition
  *
  * File Name: car.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo
+ * Username:  fairka
  * Course:    CPTR 142
  *
  */
@@ -40,6 +40,9 @@ void CarRegistration::setCode(int newCode) {
 }
 
 // PrintLicenseNum() with format <county>-<year>-<code>
+void CarRegistration::printLicenseNum() {
+    cout << county << "-" << year << "-" << code << endl;
+}
 
 int main() {
    CarRegistration car;
