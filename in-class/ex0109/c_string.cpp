@@ -21,6 +21,7 @@ void countThings(char cString[], int &alphaCount, int &digitCount,
  */
 int main() {
 
+<<<<<<< HEAD
   //	FIRST EXERCISE
 
   // define variables
@@ -33,19 +34,46 @@ int main() {
   cin >> firstName >> lastName;
   cout << "First name is: " << firstName << endl;
   cout << "Last name is:  " << lastName << endl;
+=======
+	//	FIRST EXERCISE
+
+	// define variables
+	char firstName[20], lastName[20], lastCommaFirst[40];
+	int size;
+	bool flag;
+ 
+	// collect user input
+	cout << "Enter your first and last name separated by a space: ";
+	cin >> firstName >> lastName;
+	cout << "First name is: " << firstName << endl;
+	cout << "Last name is:  " << lastName << endl;
+
+	// TODO: combine into new variable as "Last, First"
+    strcpy(lastCommaFirst, lastName);
+    strcat(lastCommaFirst, ", ");
+    strcat(lastCommaFirst, firstName);
+	cout << "Full name is:  " << lastCommaFirst << endl;
+>>>>>>> upstream/master
 
   // TODO: combine into new variable as "Last, First"
   strcpy(lastCommaFirst, lastName);
   strcat(lastCommaFirst, ", ");
   strcat(lastCommaFirst, firstName);
 
+<<<<<<< HEAD
   cout << "Full name is:  " << lastCommaFirst << endl;
 
   // TODO: calculate name length
   size = strlen(lastCommaFirst);
+=======
+	// TODO: calculate name length
+    size = strlen(lastCommaFirst);
+	cout << "Name size is:  " << size << endl;
+>>>>>>> upstream/master
 
   cout << "Name size is:  " << size << endl;
 
+<<<<<<< HEAD
   // TODO: compare first and last names for being the same
   flag = strcmp(firstName, lastName);
 
@@ -54,6 +82,15 @@ int main() {
   } else {
     cout << "Not so confusing!" << endl;
   }
+=======
+	// TODO: compare first and last names for being the same
+    flag = strcmp(firstName, lastName) == 0;
+	if (flag) {
+		cout << "What were your parents thinking!?" << endl;
+	} else {
+		cout << "Not so confusing!" << endl;
+	}
+>>>>>>> upstream/master
 
   //	SECOND EXERCISE
 
@@ -65,16 +102,22 @@ int main() {
   countThings(theString, letters, digits,
                  punctuation);
 
+<<<<<<< HEAD
   cout << endl << "SECOND EXERCISE" << endl;
   cout << "The string has " << letters << " letters." << endl;
   cout << "The string has " << digits << " digits." << endl;
   cout << "The string has " << punctuation << " punctuation characters."
        << endl;
+=======
+	// TODO: call function to count things
+    countThings(theString, letters, digits, punctuation);
+>>>>>>> upstream/master
 
   return 0;
 }
 
 // TODO: Define (implement) the countThings() function
+<<<<<<< HEAD
 void countThings(char cString[], int &alphaCount, int &digitCount,
                  int &punctCount) {
   for (int i = 0; i < strlen(cString); i++) {
@@ -89,3 +132,9 @@ void countThings(char cString[], int &alphaCount, int &digitCount,
     }
   }
 }
+=======
+
+void countThings(char cString[], int &alphaCount, int &digitCount, int &punctCount) {
+    alphaCount++;
+}
+>>>>>>> upstream/master

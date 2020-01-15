@@ -3,8 +3,13 @@
  * In-Class Exercise: Enumeration Data Types
  *
  * File Name: enum.cpp
+<<<<<<< HEAD
  * Username:  hartjo
  * Username:  fairka
+=======
+ * Username:  fostja
+ * Username:  ?
+>>>>>>> upstream/master
  * Course:    CPTR 142
  */
 
