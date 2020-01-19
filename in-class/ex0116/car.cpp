@@ -3,8 +3,8 @@
  * In-Class Exercise: Class definition
  *
  * File Name: car.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  joelhart
+ * Username:  fairka
  * Course:    CPTR 142
  *
  */
@@ -17,31 +17,31 @@ enum CountyFIPS { FIPS_ADAMS = 1, FIPS_KING = 33, FIPS_WALLA_WALLA = 71 };
 
 class CarRegistration{
 	public:
-		void	setYear(int newYear);
-		void	setCounty(CountyFIPS newCounty);
-		void	setCode(int newCode);
-		void	printLicenseNum();
+		void	setYear(int newYear) {year = newYear;}
+		void	setCounty(CountyFIPS newCounty) {county = newCounty;}
+		void	setCode(int newCode) {code = newCode;}
+		void	printLicenseNum() const {	cout << county << "-" << year << "-" << code << endl;}
 	private:
 		int			year;
 		CountyFIPS	county;
 		int			code;
 };
 
-void CarRegistration::setYear(int newYear) {
-	year = newYear;
-}
+// void CarRegistration::setYear(int newYear) {
+// 	year = newYear;
+// }
 
-void CarRegistration::setCounty(CountyFIPS newCounty) {
-	county = newCounty;
-}
+// void CarRegistration::setCounty(CountyFIPS newCounty) {
+// 	county = newCounty;
+// }
 
-void CarRegistration::setCode(int newCode) {
-	code = newCode;
-}
+// void CarRegistration::setCode(int newCode) {
+// 	code = newCode;
+// }
 
-void CarRegistration::printLicenseNum() {
-	cout << county << "-" << year << "-" << code << endl;
-}
+// void CarRegistration::printLicenseNum() const{
+// 	cout << county << "-" << year << "-" << code << endl;
+// }
 
 int main() {
    CarRegistration car;

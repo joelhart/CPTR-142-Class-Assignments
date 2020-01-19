@@ -3,8 +3,8 @@
  * In-Class Exercise: Creating a Class
  *
  * File Name: main.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  joelhart
+ * Username:  fairka
  * Course:    CPTR 142
  *
  */
@@ -22,10 +22,30 @@ using namespace std;
   -  ensure that the value never becomes negative
 */
 
+class CounterType {
+    public:
+        void setCounter(unsigned int newCounter) {counter = newCounter;}
+        void lowerCounter() {counter--;}
+        void upperCounter() {counter++;}
+        unsigned int getCounter() {return counter;}
+        void printCounter() {cout << counter << endl;}
+    private:
+        unsigned int counter;
+
+};
+
 /*====================================================================
  * Main program
  */
 int main() {
+
+CounterType number;
+number.setCounter(1);
+number.lowerCounter();
+number.lowerCounter();
+number.printCounter();
+
+assert(number.getCounter() == 0);
 
     cout << "Counter Checkpoint" << endl;
 
