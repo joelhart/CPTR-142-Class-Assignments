@@ -14,13 +14,16 @@
 #include <string.h>
 using namespace std;
 
-bool areAnagrams(char string1[], char string2[]) {
+bool areAnagrams(const char string1[], const char string2[]) {
   // TODO Add code to determine if strings are anagrams
-  int count1;
-  int count2;
+  int count1 = 0;
+  int count2 = 0;
 
   for (int i = 0; i < strlen(string1); i++) {
     count1 += string1[i];
+  }
+
+  for (int i = 0; i < strlen(string2); i++) {
     count2 += string2[i];
   }
 
@@ -31,14 +34,24 @@ bool areAnagrams(char string1[], char string2[]) {
   }
 }
 
-bool arePalindromes(char string1[], char string2[]) {
+bool arePalindromes(const char string1[], const char string2[]) {
   // TODO Add code to determine if strings are anagrams
-  bool fail;
+  bool fail = false;
 
   for (int i = 0; i < strlen(string1); i++) {
-    if (string1[i] != string2[strlen(string1)-i]) {
-        fail = true;
-    } else {}
+
+    if (strlen(string1) != strlen(string2)) {
+      fail = true;
+    }
+    if (string1[i] == string2[strlen(string1) - (i + 1)] && !fail) {
+
+      //   cout << "string1i = " << string1[i] << endl;
+      //   cout << "string2i = " << string2[strlen(string1) - i] << endl;
+      //   cout << "reached here" << endl;
+      fail = false;
+    } else {
+      fail = true;
+    }
   }
 
   if (!fail) {
@@ -47,3 +60,12 @@ bool arePalindromes(char string1[], char string2[]) {
     return false;
   }
 }
+
+// int main() {
+
+//   char string4[10] = "bobo";
+//   char string5[10] = "obob";
+
+//   cout << "Anagram: " << areAnagrams(string4, string5) << endl;
+//   cout << "Palindrome: " << arePalindromes(string4, string5) << endl;
+// }
