@@ -5,7 +5,7 @@
  * File Name:       main.cpp
  * Course:          cp1TR 142
  * 
- /
+ */
 
 #include <iostream>  // for cin and cout
 #include <cmath>    // for trig functions
@@ -13,7 +13,7 @@ using namespace std;
 
 #include "points.h"
 
-/====================================================================
+/*====================================================================
  * Main program
  */
 int main() {
