@@ -1,4 +1,4 @@
-/*************************************************************************
+/*
  *
  * Homework Assignment: struct for polar and cartesian points
  *
@@ -10,16 +10,25 @@
  */
 #ifndef POINTS_H
 #define POINTS_H
-#include "points.cpp"
+
+struct CartesianPoint {
+
+  double x;
+  double y;
+};
+
+struct PolarPoint {
+
+  double radius;
+  double theta;
+};
 
 //  function declarations (prototypes)
-PolarPoint CartesianToPolar(CartesianPoint c);
-void PolarToCartesian(double radius, double theta, double &x, double &y);
-double LengthC(double x, double y);
-void NormalizedC(double xIn, double yIn, double &xOut, double &yOut);
-double DotProductC(double firstX, double firstY, double secondX,
-                   double secondY);
-void SumC(double firstX, double firstY, double secondX, double secondY,
-          double &resultX, double &resultY);
+PolarPoint CartesianToPolar(CartesianPoint cPoint);
+CartesianPoint PolarToCartesian(PolarPoint pPoint);
+double LengthC(CartesianPoint cPoint);
+CartesianPoint NormalizedC(CartesianPoint cPoint);
+double DotProductC(CartesianPoint firstPoint, CartesianPoint secondPoint);
+CartesianPoint SumC(CartesianPoint firstPoint, CartesianPoint secondPoint);
 
 #endif // POINTS_H
