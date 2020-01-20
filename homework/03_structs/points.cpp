@@ -3,7 +3,7 @@
  * Homework Assignment: struct for polar and cartesian points
  *
  * File Name:       points.cpp
- * Name:            ?
+ * Name:            Joel Hartman
  * Course:          CPTR 142
  * Date:            January 17, 2020
  *
@@ -15,9 +15,29 @@ using namespace std;
 
 #include "points.h"
 
-void CartesianToPolar(double x, double y, double &radius, double &theta) {
-  radius = sqrt(pow(x, 2) + pow(y, 2));
-  theta = atan2(y, x);
+struct CartesianPoint {
+  double x;
+  double y;
+  double radius;
+  double theta;
+
+};
+
+struct PolarPoint {
+  double x;
+  double y;
+  double radius;
+  double theta;
+
+};
+
+CartesianPoint Cartesian;
+
+PolarPoint CartesianToPolar(CartesianPoint c) {
+PolarPoint p;
+  p.radius = sqrt(pow(c.x, 2) + pow(c.y, 2));
+  p.theta = atan2(c.y, c.x);
+  return p;
 }
 
 void PolarToCartesian(double radius, double theta, double &x, double &y) {
