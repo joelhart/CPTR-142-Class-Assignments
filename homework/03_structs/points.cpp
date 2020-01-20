@@ -17,22 +17,22 @@ using namespace std;
 
 PolarPoint CartesianToPolar(CartesianPoint cPoint) {
 
-  PolarPoint polarReturn;
+  PolarPoint polarR;
 
-  polarReturn.radius = sqrt(pow(cPoint.x, 2) + pow(cPoint.y, 2));
-  polarReturn.theta = atan2(cPoint.y, cPoint.x);
+  polarR.radius = sqrt(pow(cPoint.x, 2) + pow(cPoint.y, 2));
+  polarR.theta = atan2(cPoint.y, cPoint.x);
 
-  return polarReturn;
+  return polarR;
 }
 
 CartesianPoint PolarToCartesian(PolarPoint pPoint) {
 
-  CartesianPoint cartReturn;
+  CartesianPoint cartR;
 
-  cartReturn.x = pPoint.radius * cos(pPoint.theta);
-  cartReturn.y = pPoint.radius * sin(pPoint.theta);
+  cartR.x = pPoint.radius * cos(pPoint.theta);
+  cartR.y = pPoint.radius * sin(pPoint.theta);
 
-  return cartReturn;
+  return cartR;
 }
 
 double LengthC(CartesianPoint cPoint) {
@@ -41,13 +41,13 @@ double LengthC(CartesianPoint cPoint) {
 
 CartesianPoint NormalizedC(CartesianPoint cPoint) {
 
-  CartesianPoint cartOutput;
+  CartesianPoint cartO;
 
   double length = LengthC(cPoint);
-  cartOutput.x = cPoint.x / length;
-  cartOutput.y = cPoint.y / length;
+  cartO.x = cPoint.x / length;
+  cartO.y = cPoint.y / length;
 
-  return cartOutput;
+  return cartO;
 }
 
 double DotProductC(CartesianPoint firstPoint, CartesianPoint secondPoint) {
