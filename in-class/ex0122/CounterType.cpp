@@ -2,19 +2,21 @@
 #include "CounterType.h"
 using namespace std;
 
+int CounterType::sharedCount = 1;
+
 CounterType::CounterType() {
 	count = 11;
 }
 
-CounterType::CounterType(int newCount) {
-	count = newCount;
+CounterType::CounterType(int count) {
+	this->count = count;
 }
 
-void CounterType::setCount(int newCount) {
-	if (newCount < 0) {
+void CounterType::setCount(int count) {
+	if (this->count < 0) {
 		count = 0;
 	} else {
-		count = newCount;
+		this->count = count;
 	}
 }
 
@@ -26,4 +28,8 @@ void CounterType::decrease() {
 
 void CounterType::printCount() const {
 	cout << count;
+}
+
+int CounterType::getSharedCount()const {
+    return sharedCount;
 }

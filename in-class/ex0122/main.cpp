@@ -3,8 +3,8 @@
  * In-Class Exercise: Constructor for CounterType
  *
  * File Name: main.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo   
+ * Username:  fairka
  * Course:    CPTR 142
  * Date:      17 January 2019
  *
@@ -21,7 +21,7 @@ using namespace std;
  */
 int main() {
     cout << "Counter Exercise" << endl;
-    CounterType1 counter1;
+    CounterType counter1;
 
     counter1.setCount(-1);
     assert(counter1.getCount() == 0);
