@@ -3,7 +3,7 @@
  * Homework Assignment: Class for taking a pizza order
  *
  * File Name:       pizza.h
- * Name:            ?
+ * Name:            hartjo
  * Course:          cp1TR 142
  * Date:            January 22, 2020
  *
@@ -22,7 +22,13 @@ public:
   ~Pizza(){};
 
   // TODO Add the accessor and mutator functions for each class variable.
+  void setSize(int sizeNum);        // Mutator
+  void setType(int typeNum);        // Mutator
+  void setToppings(int toppingNum); // Mutator
 
+  void getSize(int size) const;         // Accessor
+  void getType(int type) const;         // Accessor
+  void getToppings(int toppings) const; // Accessor
   //==================================
   // computePrice
   // Returns:

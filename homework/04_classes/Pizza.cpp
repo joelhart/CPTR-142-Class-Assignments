@@ -3,7 +3,7 @@
  * Homework Assignment: Class for taking a pizza order
  *
  * File Name:       pizza.cpp
- * Name:            ?
+ * Name:            hartjo
  * Course:          cp1TR 142
  * Date:            January 22, 2020
  *
@@ -30,8 +30,29 @@ Pizza::Pizza() {
 //==================================
 
 // TODO Add the accessor and mutator functions for each class variable.
-
 // TODO Add a function to compute price of the pizza
+void Pizza::setSize(int sizeNum) { size = sizeNum; }
+void Pizza::setType(int typeNum) { type = typeNum; }
+void Pizza::setToppings(int toppingNum) { toppings = toppingNum; }
+int Pizza::getSize() { return size; }
+int Pizza::getType() { return type; }
+int Pizza::getToppings() { return toppings; }
+
+double Pizza::computePrice() {
+  double total;
+
+  if (size == 0) {
+    total = 10;
+  } else if (size == 1) {
+    total = 14;
+  } else if (size == 2) {
+    total = 17;
+  }
+
+  total = total + (toppings * 2);
+
+  return total;
+}
 
 //==================================
 // outputDescription
