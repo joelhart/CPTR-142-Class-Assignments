@@ -18,8 +18,8 @@ using namespace std;
 // Constructors for the fraction class
 // ======================
 Fraction::Fraction() {
-  int numerator = 1;
-  int denominator = 1;
+  numerator = 1;
+  denominator = 1;
 }
 
 Fraction::Fraction(int denominator) {
