@@ -18,7 +18,7 @@ class Fraction {
 public:
   Fraction();
   Fraction(int denominator);
-  Fraction(int denominator, int numerator);
+  Fraction(int numerator, int denominator);
   // ~Fraction(){};
   // TODO Add fraction constuctors here
 

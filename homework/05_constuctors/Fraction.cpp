@@ -27,7 +27,7 @@ Fraction::Fraction(int denominator) {
   this->denominator = denominator;
 }
 
-Fraction::Fraction(int denominator, int numerator) {
+Fraction::Fraction(int numerator, int denominator) {
   this->numerator = numerator;
   this->denominator = denominator;
 }
