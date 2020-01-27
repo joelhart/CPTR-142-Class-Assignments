@@ -49,7 +49,7 @@ double Pizza::computePrice() {
     total = 17;
   }
 
-  total = total + (toppings * 2);
+  total += (toppings * 2);
 
   return total;
 }

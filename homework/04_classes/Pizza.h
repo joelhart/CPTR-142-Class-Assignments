@@ -26,9 +26,9 @@ public:
   void setType(int typeNum);        // Mutator
   void setToppings(int toppingNum); // Mutator
 
-  void getSize(int size) const;         // Accessor
-  void getType(int type) const;         // Accessor
-  void getToppings(int toppings) const; // Accessor
+  int getSize();
+  int getType();
+  int getToppings();
   //==================================
   // computePrice
   // Returns:
