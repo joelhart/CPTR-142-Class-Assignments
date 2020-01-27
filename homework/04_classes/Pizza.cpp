@@ -39,7 +39,7 @@ int Pizza::getType() { return type; }
 int Pizza::getToppings() { return toppings; }
 
 double Pizza::computePrice() {
-  double total;
+  double total = 0;
 
   if (size == 0) {
     total = 10;
