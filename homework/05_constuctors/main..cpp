@@ -1,10 +1,10 @@
 /*************************************************************************
  *
  * Homework Assignment: Create constructors for the Fraction class
- * 
+ *
  * File Name:       main.cpp
  * Course:          cp1TR 142
- * 
+ *
  */
 
 #include "Fraction.h"

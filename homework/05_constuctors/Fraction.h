@@ -3,7 +3,7 @@
  * Homework Assignment: Create constructors for the Fraction class
  *
  * File Name:       Fraction.h
- * Name:            ?
+ * Name:            hartjo
  * Course:          cp1TR 142
  * Date:            January 22, 2020
  *
@@ -16,6 +16,10 @@ using namespace std;
 
 class Fraction {
 public:
+  Fraction();
+  Fraction(int denominator);
+  Fraction(int denominator, int numerator);
+  // ~Fraction(){};
   // TODO Add fraction constuctors here
 
   double getDouble();
