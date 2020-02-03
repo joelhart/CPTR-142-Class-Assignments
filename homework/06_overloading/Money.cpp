@@ -32,13 +32,14 @@ bool Money::operator>(const Money &amount2) {
 }
 
 // TODO Add overloading + operator here
-// const Money operator+(const Money &amount2) {
-//     Money total;
-//     dollars;
-//   return ();
-// }
+ const Money operator+(const Money &amount2) {
+     return (true);
+ }
 
 // TODO Add overloading - operator here
+const Money operator-(const Money &amount2) {
+     return (true);
+ }
 
 Money::Money() {
   dollars = 0;
