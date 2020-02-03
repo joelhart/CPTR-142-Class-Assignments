@@ -3,8 +3,8 @@
  * In-Class Exercise: Vector
  *
  * File Name: vector.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo
+ * Username:  fairka
  * Course:    CPTR 142
  *
  */
@@ -32,6 +32,9 @@ State::State(string name, int population) {
 
 int main() {
   // Exrcise 1: define a vector and print its size
+  
+  vector<State> states;
+  cout << "Size of states: " << states.size() << endl;
 
   // Exercise 2: add elements
 
