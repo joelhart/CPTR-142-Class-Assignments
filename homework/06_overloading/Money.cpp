@@ -63,8 +63,8 @@ Money const Money::operator+(const Money &amount2) {
 // TODO Add overloading - operator here
 Money const Money::operator-(const Money &amount2) {
   Money total;
-  int small1;
-  int small2;
+  double small1;
+  double small2;
 
   total.dollars = dollars - amount2.dollars;
   total.cents = cents - amount2.cents;
