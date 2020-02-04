@@ -72,11 +72,11 @@ Money const Money::operator-(const Money &amount2) {
   small1 = (dollars * 100) + cents;
   small2 = (total.dollars * 100) + total.cents;
 
-  cout << "small 1 is " << small1 << endl;
-  cout << "small 2 is " << small2 << endl;
+  //   cout << "small 1 is " << small1 << endl;
+  //   cout << "small 2 is " << small2 << endl;
 
   //   return total;
-  return small1 - small2;
+  return small2 / 100;
 }
 
 Money::Money() {
