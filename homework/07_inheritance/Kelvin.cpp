@@ -15,7 +15,9 @@ void Kelvin::printTemperature() const {
   cout << getTemperature() << " Kelvin" << endl;
 }
 
-double Kelvin::getTemperatureInCelsius() const { return getTemperature() - 273.15; }
+double Kelvin::getTemperatureInCelsius() const {
+  return getTemperature() - 273.15;
+}
 
 double Kelvin::getTemperatureInFahrenheit() const {
   return (getTemperatureInCelsius() * 9.0 / 5) + 32;

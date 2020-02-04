@@ -9,7 +9,7 @@
  *
  */
 
- #include "Celsius.h"
+#include "Celsius.h"
 #include <iostream>
 
 using namespace std;
@@ -24,4 +24,6 @@ double Celsius::getTemperatureInFahrenheit() const {
   return (getTemperatureInCelsius() * 9.0 / 5) + 32;
 }
 
-double Celsius::getTemperatureInKelvin() const { return (getTemperatureInCelsius() + 273.15);}
+double Celsius::getTemperatureInKelvin() const {
+  return (getTemperatureInCelsius() + 273.15);
+}
