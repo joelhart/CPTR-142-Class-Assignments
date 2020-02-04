@@ -49,8 +49,13 @@ bool Money::operator>(const Money &amount2) {
 // TODO Add overloading + operator here
 Money const Money::operator+(const Money &amount2) {
   Money total;
-  total.dollars = dollars + amount2.dollars;
-  total.cents = cents + amount2.cents;
+  if (cents + amount2.cents > 100) {
+    total.dollars = dollars + amount2.dollars + 1;
+    total.cents = cents + amount2.cents - 100;
+  } else {
+    total.dollars = dollars + amount2.dollars;
+    total.cents = cents + amount2.cents;
+  }
 
   return total;
 }
