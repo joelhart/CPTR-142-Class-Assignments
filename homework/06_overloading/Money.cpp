@@ -76,7 +76,8 @@ Money const Money::operator-(const Money &amount2) {
   cout << "small 2 is " << small2 / 100 << " and should be 2.34";
 
   //   return total;
-  return (small1 - small2) / 100;
+  //   return (small1 - small2) / 100;
+  return (small2) / 100;
 }
 
 Money::Money() {
