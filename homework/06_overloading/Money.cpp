@@ -64,8 +64,8 @@ Money const Money::operator+(const Money &amount2) {
 Money const Money::operator-(const Money &amount2) {
   Money total;
   Money small1, small2;
-  //   total.dollars = dollars - amount2.dollars;
-  //   total.cents = cents - amount2.cents;
+  total.dollars = dollars - amount2.dollars;
+  total.cents = cents - amount2.cents;
 
   small1 = (dollars * 100) + cents;
   small2 = (total.dollars * 100) + total.cents;
