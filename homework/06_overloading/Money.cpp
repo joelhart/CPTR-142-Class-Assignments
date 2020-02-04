@@ -5,7 +5,7 @@
  * File Name:       Money.cpp
  * Name:            hartjo
  * Course:          CPTR 142
- * Date:            2/2 
+ * Date:            2/2
  *
  */
 #include "Money.h"
@@ -15,31 +15,36 @@
 using namespace std;
 
 bool Money::operator==(const Money &amount2) {
-  return ((dollars == amount2.dollars) &&
-          (cents == amount2.cents));
+  return ((dollars == amount2.dollars) && (cents == amount2.cents));
 }
 
 // TODO Add overloading < operator here
 bool Money::operator<(const Money &amount2) {
-  return ((dollars < amount2.dollars) &&
-          (cents < amount2.cents));
+  return ((dollars < amount2.dollars) && (cents < amount2.cents));
 }
 
 // TODO Add overloading > operator here
 bool Money::operator>(const Money &amount2) {
-  return ((dollars > amount2.dollars) &&
-          (cents > amount2.cents));
+  return ((dollars > amount2.dollars) && (cents > amount2.cents));
 }
 
 // TODO Add overloading + operator here
- const Money operator+(const Money &amount2) {
-     return (true);
- }
+Money const Money::operator+(const Money &amount2) {
+  Money total;
+  total.dollars = dollars + amount2.dollars;
+  total.cents = cents + amount2.cents;
+
+  return total;
+}
 
 // TODO Add overloading - operator here
-const Money operator-(const Money &amount2) {
-     return (true);
- }
+Money const Money::operator-(const Money &amount2) {
+  Money total;
+  total.dollars = dollars - amount2.dollars;
+  total.cents = cents - amount2.cents;
+
+  return total;
+}
 
 Money::Money() {
   dollars = 0;
