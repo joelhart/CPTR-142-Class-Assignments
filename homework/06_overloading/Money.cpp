@@ -34,7 +34,16 @@ bool Money::operator<(const Money &amount2) {
 
 // TODO Add overloading > operator here
 bool Money::operator>(const Money &amount2) {
-  return ((dollars > amount2.dollars) && (cents > amount2.cents));
+  if (dollars > amount2.dollars) {
+    return true;
+  } else {
+    return false;
+  }
+  if (cents > amount2.cents) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // TODO Add overloading + operator here
