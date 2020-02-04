@@ -22,7 +22,10 @@ bool Money::operator==(const Money &amount2) {
 bool Money::operator<(const Money &amount2) {
   if (dollars < amount2.dollars) {
     return true;
-  } else if (cents < amount2.cents) {
+  } else {
+    return false;
+  }
+  if (cents < amount2.cents) {
     return true;
   } else {
     return false;
