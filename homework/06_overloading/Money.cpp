@@ -63,16 +63,17 @@ Money const Money::operator+(const Money &amount2) {
 // TODO Add overloading - operator here
 Money const Money::operator-(const Money &amount2) {
   Money total;
-  //   Money small1, small2;
+  Money small1, small2;
   total.dollars = dollars - amount2.dollars;
   total.cents = cents - amount2.cents;
 
-  //   small1 = (dollars * 100) + cents;
-  //   small2 = (total.dollars * 100) + total.cents;
+  small1 = (dollars * 100) + cents;
+  small2 = (total.dollars * 100) + total.cents;
 
-  //   cout << small1 - small2;
+  // cout << small1 - small2;
 
-  return total;
+  //   return total;
+  return small1 - small2;
 }
 
 Money::Money() {
