@@ -3,8 +3,8 @@
  * In-Class Exercise: find()
  *
  * File Name: find.cpp
- * Username:  ?
- * Username:  ?
+ * Username:  hartjo
+ * Username:  fairka
  * Course:    CPTR 142
  *
  */
@@ -26,12 +26,19 @@ int main() {
   pairs.push_back(make_pair(1809, "Madison"));
 
   // TODO: define an iterator to hold a result
+  vector<pair<int, string>>::iterator iter;
 
   // TODO: find first President in 19th century
+  iter = find_if(pairs.begin(), pairs.end(), is19thCentury);
 
   // TODO: get pair from iterator
+  if (iter != pairs.end()) {
+      cout << "Found: " << (*iter).second << endl;
+  }
 
   // TODO: print name of first President in 19th century
+
+
 
   return 0;
 }
