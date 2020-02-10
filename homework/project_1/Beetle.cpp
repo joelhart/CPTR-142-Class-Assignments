@@ -37,7 +37,7 @@ void start(int &seed, int &playerNum) {
     if (cin.fail()) {
       cin.clear();
       cin.ignore(100, '\n');
-      cout << "Incorrect Input: Please try again: " << endl;
+      cout << "Incorrect Input: Please try again: ";
       cin >> playerNum;
     }
     if (!cin.fail())
@@ -50,7 +50,7 @@ void start(int &seed, int &playerNum) {
     if (cin.fail()) {
       cin.clear();
       cin.ignore(100, '\n');
-      cout << "Incorrect Input: Please try again: " << endl;
+      cout << "Incorrect Input: Please try again: ";
       cin >> seed;
     }
     if (!cin.fail())

@@ -3,9 +3,9 @@
  * Homework Assignment: Class for counting words
  *
  * File Name:       BagOfWords.h
- * Name:            ?
+ * Name:            hartjo
  * Course:          CPTR 142
- * Date:            ?
+ * Date:            2/9
  *
  */
 #include <map>
