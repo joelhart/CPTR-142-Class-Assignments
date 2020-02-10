@@ -20,12 +20,17 @@ using namespace std;
  */
 int main() {
     // define a variable to hold a BankAccount object
+    BankAccount idk;
+
     
     // define a variable to hold a pointer to a BankAccount object (properly initialized)
+        BankAccount *object;
     
     // assign the address of the first variable to the second
+    *object = idk;
     
     // call displayAccountSummary() using the dot operator
+    cout << (*idk).displayAccountSummary();
     
     // call updateInterest() using the dereference operator
     
