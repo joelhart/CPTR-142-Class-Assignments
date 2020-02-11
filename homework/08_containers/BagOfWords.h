@@ -14,7 +14,7 @@
 class BagOfWords {
 private:
   std::map<std::string, int> count;
-  //std::string normalizeWord(std::string);
+  // std::string normalizeWord(std::string);
 
   int keyCount = 0;
   int uniqueWordCount = 0;
@@ -24,5 +24,5 @@ public:
   std::string getTopWord();
   int getUniqueWordCount();
   int getWordCount(std::string word);
-  //void printWordCount();
+  // void printWordCount();
 };
