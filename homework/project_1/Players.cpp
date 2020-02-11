@@ -4,7 +4,7 @@ What it does: This file provides all required info for the Player class.
 Name: hartjo
 Date: 2/3
  */
-
+ 
 #include "Players.h"
 #include <iostream>
 

@@ -85,7 +85,7 @@ void play(vector<Player> &who, int size, int seed) {
       rollHold = roll.diceRoll();
 
       if (who[i].playerBody(rollHold)) {
-        cout << who[i].playerName << " is the winner! It took " << turnCount
+        cout << who[i].playerName << " is the winner! It took " << (turnCount / who.size()) +1
              << " turns to win." << endl;
         continueRound = false;
         break;
