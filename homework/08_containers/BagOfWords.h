@@ -16,6 +16,9 @@ private:
   std::map<std::string, int> count;
   //std::string normalizeWord(std::string);
 
+  int keyCount = 0;
+  int getUniqueWordCount = 0;
+
 public:
   void addWord(std::string);
   std::string getTopWord();

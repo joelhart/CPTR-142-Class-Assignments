@@ -12,27 +12,100 @@
  #include "BagOfWords.h"
  #include <vector>
  #include <map>
+ #include <string>
 
  using namespace std;
-
- void addWord(string word) {
-
-     for (int i = 0; i <) {
-         count.emplace(word, );
-
-     }
-
- }
-
-  string getTopWord() {
-
+ 
+void BagOfWords::addWord(string word) {
+ 
+  bool isAlNum = false;
+ 
+  string wordHolder;
+ 
+  for (int i = 0; i < word.size(); i++) {
+ 
+    if (isalnum(word.at(i))) {
+ 
+      isAlNum = true;
+ 
+      if (isupper(word.at(i))) {
+ 
+        wordHolder.push_back(tolower(word.at(i)));
+ 
+      } else {
+ 
+        wordHolder.push_back(word.at(i));
+      }
+    }
   }
-  int getUniqueWordCount() {
-
+ 
+  if (isAlNum) {
+ 
+    count.emplace(wordHolder, keyCount);
+ 
+    count.at(wordHolder)++;
+ 
+    if (count.at(wordHolder) == 1) {
+ 
+      uniqueWordCount++;
+    }
   }
-  int getWordCount(string word) {
-
+}
+ 
+string BagOfWords::getTopWord() {
+ 
+  string topName;
+ 
+  int topValue = 0;
+ 
+  map<string, int>::iterator iter = count.begin();
+ 
+  while (iter != count.end()) {
+ 
+    if (iter->second > topValue) {
+ 
+      topValue = iter->second;
+ 
+      topName = iter->first;
+    }
+ 
+    iter++;
   }
-  void printWordCount() {
-      
+ 
+  return topName;
+}
+ 
+int BagOfWords::getUniqueWordCount() { return uniqueWordCount; }
+ 
+int BagOfWords::getWordCount(string word) {
+ 
+  bool isAlNum = false;
+ 
+  string wordHolder;
+ 
+  for (int i = 0; i < word.size(); i++) {
+ 
+    if (isalnum(word.at(i))) {
+ 
+      isAlNum = true;
+ 
+      if (isupper(word.at(i))) {
+ 
+        wordHolder.push_back(tolower(word.at(i)));
+ 
+      } else {
+ 
+        wordHolder.push_back(word.at(i));
+      }
+    }
   }
+ 
+  if (isAlNum) {
+ 
+    return count.at(wordHolder);
+ 
+  } else {
+ 
+    return 0;
+  }
+}
