@@ -17,7 +17,7 @@ private:
   //std::string normalizeWord(std::string);
 
   int keyCount = 0;
-  int getUniqueWordCount = 0;
+  int uniqueWordCount = 0;
 
 public:
   void addWord(std::string);
