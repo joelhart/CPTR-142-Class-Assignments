@@ -3,9 +3,9 @@
  * Homework Assignment:  Class for counting words
  *
  * File Name:  main.cpp
- * Name:            ?
+ * Name:            hartjo
  * Course:          CPTR 142
- * Date:            ?
+ * Date:            2/17
  *
  */
 #include "Bee.h"
