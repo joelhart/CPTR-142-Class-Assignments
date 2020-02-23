@@ -40,13 +40,17 @@ From the bash command prompt enter the following:
 > cd ~/code/cpp/gitExercise/; git status
 
 ```text
-Replace this line with the output from the terminal.
+nothing to commit, working tree clean
 ```
 
 > git log
 
 ```text
-Replace this line with the output from the terminal.
+commit d3556d17ed2cf619d3dfdd25ab2153e3f087866a (HEAD -> master)
+Author: hartjo <hartjo@cs.wallawalla.edu>
+Date:   Sun Feb 23 21:45:56 2020 +0000
+
+    initialize repository
 ```
 
 Select the file `index.html` from the directory tree on the left and edit it to appear as follows:
@@ -65,19 +69,81 @@ Select the file `index.html` from the directory tree on the left and edit it to 
 > git status
 
 ```text
-Replace this line with the output from the terminal.
+On branch master
+nothing to commit, working tree clean
+hartjo@code:~/code/cpp/gitExercise$ git diff
+hartjo@code:~/code/cpp/gitExercise$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 > git diff
 
 ```text
-Replace this line with the output from the terminal.
+diff --git a/index.html b/index.html
+index e69de29..af53f37 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>CPTR 142 - Git Assignment</title>
+:...skipping...
+diff --git a/index.html b/index.html
+index e69de29..af53f37 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>CPTR 142 - Git Assignment</title>
++    </head>
+:...skipping...
+diff --git a/index.html b/index.html
+index e69de29..af53f37 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>CPTR 142 - Git Assignment</title>
++    </head>
++    <body>
++        <h1>This is our Git Assignment page!</h1>
++    </body>
++</html>
+\ No newline at end of file
+:...skipping...
+diff --git a/index.html b/index.html
+index e69de29..af53f37 100644
+--- a/index.html
++++ b/index.html
+@@ -0,0 +1,8 @@
++<html>
++    <head>
++        <title>CPTR 142 - Git Assignment</title>
++    </head>
++    <body>
++        <h1>This is our Git Assignment page!</h1>
++    </body>
++</html>
+\ No newline at end of file
+~
+~
 ```
 
 Commit your changes to your local Git repository with an appropriate commit message.
 
 ```text
-Replace this line with your commands and the output from the terminal.
+hartjo@code:~/code/cpp/gitExercise$ git commit -a -m "Updated index" 
+[master 14b3028] Updated index
+ 1 file changed, 8 insertions(+)
 ```
 
 This gives you a brief introduction to working with a local Git repository.
@@ -108,7 +174,12 @@ git clone git@gitlab.cs.wallawalla.edu:USERID/student142_hw11.git
 If you are asked to verify the authenticity of `gitlab.cs.wallawalla.edu (192.147.173.125)`, say `yes`.
 
 ```text
-Replace this line with your commands and the output from the terminal.
+Cloning into 'student142_hw11'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 8 (delta 0), reused 8 (delta 0)
+Receiving objects: 100% (8/8), done.
 ```
 
 * In the bash shell, enter the following to add another:
@@ -121,7 +192,12 @@ git remote -v
 ```
 
 ```text
-Replace this line with your commands and the output from the terminal.
+origin  git@gitlab.cs.wallawalla.edu:hartjo/student142_hw11.git (fetch)
+origin  git@gitlab.cs.wallawalla.edu:hartjo/student142_hw11.git (push)
+upastream       git@gitlab.cs.wallawalla.edu:sptr142/stduent142_hw11.git (fetch)
+upastream       git@gitlab.cs.wallawalla.edu:sptr142/stduent142_hw11.git (push)
+upstream        git@gitlab.cs.wallawalla.edu:cptr142/student142_hw11.git (fetch)
+upstream        git@gitlab.cs.wallawalla.edu:cptr142/student142_hw11.git (push)
 ```
 
 Using the Code.CS directory tree on the left, add a new file to the `student142_hw11` directory
@@ -132,7 +208,9 @@ Add and commit the new file to your local repository.
 After the commit, check the git status and push your changes to your GitLab remote.
 
 ```text
-Replace this line with your commands and the output from the terminal.
+[master d0bac5e] Quote
+ 1 file changed, 1 insertion(+)
+ create mode 100644 JoelHartman.md
 ```
 
 ### Generate a Merge Request
