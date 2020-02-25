@@ -9,63 +9,169 @@
  *
  */
 
-#include <ctype.h>
-#include <iostream> //	cin & cout
-#include <string.h>
+#include <cctype>
+#include <cstring>
+#include <iostream>
 using namespace std;
 
-bool areAnagrams(const char string1[], const char string2[]) {
-  // TODO Add code to determine if strings are anagrams
-  int count1 = 0;
-  int count2 = 0;
+int noPunctuationLength(const char string1[]) {
+
+  int letterCounter = 0;
 
   for (int i = 0; i < strlen(string1); i++) {
-    count1 += string1[i];
+
+    if (isalpha(string1[i])) {
+
+      letterCounter++;
+    }
   }
 
-  for (int i = 0; i < strlen(string2); i++) {
-    count2 += string2[i];
-  }
+  return letterCounter;
+}
 
-  if (count1 == count2) {
-    return true;
+bool areAnagrams(const char string1[], const char string2[]) {
+
+  int stringAnagramCount = 0;
+
+  if (noPunctuationLength(string1) == noPunctuationLength(string2)) {
+
+    for (int i = 0; i < strlen(string1); i++) {
+
+      if (isalnum(string1[i])) {
+
+        for (int j = 0; j < strlen(string2);
+             j++) {
+
+          char lowerHold = 'a';
+          char upperHold = 'b';
+
+          if (isupper(string1[i])) {
+
+            lowerHold = tolower(string1[i]);
+          }
+
+          if (isupper(string2[j])) {
+
+            upperHold = tolower(string2[j]);
+          }
+
+          if (isupper(string1[i]) && isupper(string2[j])) {
+
+            if (upperHold == lowerHold) {
+
+              stringAnagramCount++;
+              break;
+            }
+
+          } else if (isupper(string1[i])) {
+
+            if (lowerHold == string2[j]) {
+
+              stringAnagramCount++;
+              break;
+            }
+
+          } else if (isupper(string2[j])) {
+
+            if (string1[i] == upperHold) {
+
+              stringAnagramCount++;
+              break;
+            }
+
+          } else {
+
+            if (string1[i] == (string2[j])) {
+
+              stringAnagramCount++;
+              break;
+            }
+          }
+        }
+      }
+    }
+    cout << endl;
+
+    cout << stringAnagramCount << endl;
+
+    if (stringAnagramCount == noPunctuationLength(string1)) {
+
+      return true;
+
+    } else {
+
+      return false;
+    }
+
   } else {
+
     return false;
   }
 }
 
 bool arePalindromes(const char string1[], const char string2[]) {
-  // TODO Add code to determine if strings are anagrams
-  bool fail = false;
 
-  for (int i = 0; i < strlen(string1); i++) {
+  string stringOneHolder = "";
+  string stringTwoHolder = "";
 
-    if (strlen(string1) != strlen(string2)) {
-      fail = true;
+  int stringComparison = 0;
+
+  if (noPunctuationLength(string1) == noPunctuationLength(string2)) {
+
+    for (int i = 0; i < strlen(string1); i++) {
+
+      if (isalpha(string1[i])) {
+
+        char holder = 'a';
+
+        if (isupper(string1[i])) {
+
+          holder = tolower(string1[i]);
+
+          stringOneHolder.push_back(holder);
+        } else {
+
+          stringOneHolder.push_back(string1[i]);
+        }
+      }
     }
-    if (string1[i] == string2[strlen(string1) - (i + 1)] && !fail) {
 
-      //   cout << "string1i = " << string1[i] << endl;
-      //   cout << "string2i = " << string2[strlen(string1) - i] << endl;
-      //   cout << "reached here" << endl;
-      fail = false;
-    } else {
-      fail = true;
+    for (int i = 0; i < strlen(string2); i++) {
+
+      if (isalpha(string2[i])) {
+
+        char holder = 'a';
+
+        if (isupper(string2[i])) {
+
+          holder = tolower(string2[i]);
+
+          stringTwoHolder.push_back(holder);
+        } else {
+
+          stringTwoHolder.push_back(string2[i]);
+        }
+      }
     }
   }
 
-  if (!fail) {
+  for (int i = 0; i < stringOneHolder.length(); i++) {
+
+    if (stringOneHolder.at(i) == stringTwoHolder
+                                     .at(stringTwoHolder.length() - (1 + i)) /*(stringOneHolder.at(i) == stringTwoHolder.at(i)) && (stringOneHolder.at(0) == stringTwoHolder.at(stringTwoHolder.length() - 1))*/) {
+
+      stringComparison++;
+    }
+  }
+
+  if (stringComparison == noPunctuationLength(string1)) {
+
     return true;
+
   } else {
+
     return false;
   }
+
+  return false;
 }
-
-// int main() {
-
-//   char string4[10] = "bobo";
-//   char string5[10] = "obob";
-
-//   cout << "Anagram: " << areAnagrams(string4, string5) << endl;
-//   cout << "Palindrome: " << arePalindromes(string4, string5) << endl;
-// }
