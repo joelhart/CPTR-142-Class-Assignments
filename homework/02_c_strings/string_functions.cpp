@@ -39,8 +39,7 @@ bool areAnagrams(const char string1[], const char string2[]) {
 
       if (isalnum(string1[i])) {
 
-        for (int j = 0; j < strlen(string2);
-             j++) {
+        for (int j = 0; j < strlen(string2); j++) {
 
           char lowerHold = 'a';
           char upperHold = 'b';
