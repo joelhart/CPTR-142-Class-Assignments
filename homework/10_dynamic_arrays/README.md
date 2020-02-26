@@ -5,13 +5,13 @@
 Your task in this homework assignment is to create and output a result string
 that is interleved from several input strings.
 One input string comes from the user and the remaining input strings come from
-the command line (see page 382 of the text).
+the command line (search zyBooks for "command line arguments").
 
 ## Solution Specifications
 
 * Implement `string mergeStrings(int argc, char *argv[], string userEntry);`.
-  * Note that the user entry string may contain spaces.
-  * This string together with the command-line arguments will be the *input strings*.
+  * The command-line arguments in `argv` plus the `userEntry` will be the *input strings*.
+  * Note that any of the strings may contain spaces.
 * Allocate space for a C-string (the *result string*) large enough to hold as many
   characters as you would have if each of the input strings were the length of the
   longest of them.
@@ -32,18 +32,21 @@ the command line (see page 382 of the text).
 
 * Start with a `mergeStrings()` function that outputs `argc` and then try running your simple
   application from the command line with a different number of command line arguments.
-* Next write a loop to output the command line arguments.
+* Next write a loop to output the command line arguments (use the zyBooks sample code for
+  command line arguments as a starting point).
 * Enhance the loop to also output the length of each command line argument.
 * After the list of command line arguments output the length of the longest of the arguments.
-* Update your report at the end to consider the length of the user entry.
+* Update your output at the end to consider the length of the user entry.
 * Report the number of *input strings* (command line arguments plus one for the user input)
   and the size of the *result string*.
-* Allocate a dynamic array (text, 14.1) to hold the *result string*.
-  Did you allow for a null character at the end?
+* Allocate a dynamic array to hold the *result string*.
+  *  `char* resultString = new char[resultStringSize];`
+  * Did you allow for a null character at the end?
 * Using an outer loop for the length of the longest of the *input strings* and an inner loop
   for the command line arguments, add a character at a time to the *result string*.
   Once you reach the length of any particular string, add spaces.
-* Don't forget to delete any dynamically allocated memory.
+* Since your function returns the new string, 
+  you should not delete the dynamically allocated memory.
 
 Since the project is using multiple files, you will need compile and run your code using the following terminal commands.
 
@@ -55,7 +58,7 @@ g++ main.cpp mergeStrings.cpp && ./a.out
 
 When you are satisfied that your code works, use the `push.sh` script to save it to GitLab.
 To verify that step you can open [GitLab](https://gitlab.cs.wallawalla.edu/) in a web browser to verify that the code transferred from Code.CS.
-While you should write a test program to verify your code, your submitted code should not include `main()`.
+While you should write a test program to verify your code, `mergeStrings.cpp` should not include `main()`.
 
 ### Submitty
 
