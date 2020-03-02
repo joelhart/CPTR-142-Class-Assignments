@@ -3,7 +3,7 @@
  * Exercise: Recursive Search
  *
  * File Name:   search.cpp
- * Username:  	?
+ * Username:  	hartjo
  * Username:  	?
  * Course:      CPTR 142
  *
@@ -39,5 +39,15 @@ int main() {
 }
 
 int mySearch(vector<int> myNums, int left, int right, int target) {
+    int midPoint = (right + left) / 2;
+    int midValue = myNums.at(midPoint);
+    if (midValue == target) {
+        return midPoint;
+    } else if (midValue < target) {
+        return mySearch(myNums, midPoint + 1, right, target);
+    } else if (target < midValue) {
+        return mySearch(myNums, left, midPoint, target);
+    }
+
     return -1;
 }
