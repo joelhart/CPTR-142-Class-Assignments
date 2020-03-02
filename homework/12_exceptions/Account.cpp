@@ -10,11 +10,14 @@
  */
 
 #include "Account.h"
+#include <stdexcept>
+
+using namespace std;
 
 // returns new balance or -1 if error
 double Account::deposit(double amount) {
   if (amount < 0) { // check for invalid argument
-    return -1;
+    throw runtime_error("ERROR");
   } else { // normal case
     balance += amount;
   }
@@ -24,7 +27,7 @@ double Account::deposit(double amount) {
 // returns new balance or -1 if invalid amount
 double Account::withdraw(double amount) {
   if (amount < 0 || amount > balance) { // check for invalid argument
-    return -1;
+    throw runtime_error("ERROR");
   } else { // normal case
     balance -= amount;
   }

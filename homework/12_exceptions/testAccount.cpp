@@ -3,9 +3,9 @@
  * Nomework: Exceptions
  *
  * File Name:   testAccount.cpp
- * Username:  	?
+ * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        ?
+ * Date:        3/1/2020
  */
 #include "Account.h"
 #include <cassert>
