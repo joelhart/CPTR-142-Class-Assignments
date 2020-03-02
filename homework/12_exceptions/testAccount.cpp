@@ -23,7 +23,7 @@ void testAccount() {
   cout << "Test 2: account.deposit(-1) == ";
   value = account.deposit(-1);
   if (value == -1) {
-    cout << "ERROR" << endl;
+    throw runtime_error("ERROR");
   } else {
     cout << value << endl;
   }
