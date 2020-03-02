@@ -3,9 +3,9 @@
  * Homework: Exceptions
  *
  * File Name:   Account.cpp
- * Username:  	?
+ * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        ?
+ * Date:        3/1/2020
  *
  */
 
