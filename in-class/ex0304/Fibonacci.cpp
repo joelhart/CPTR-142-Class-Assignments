@@ -3,8 +3,8 @@
  * Exercise: Fibonacci
  *
  * File Name:   Fibonacci.cpp
- * Username:  	?
- * Username:  	?
+ * Username:  	hartjo
+ * Username:  	fairka
  * Course:      CPTR 142
  *
  */
@@ -39,5 +39,11 @@ int fibonacciByIteration(int num) {
 
 // TODO: rewrite function to use recursion
 int fibonacciByRecursion(int num) {
-    return 42;
+    if (num == 0) {
+        return 0;
+    } else if (num == 1) {
+        return 1;
+    } else {
+        return fibonacciByRecursion(num-1) + fibonacciByRecursion(num -2);
+    }
 }
