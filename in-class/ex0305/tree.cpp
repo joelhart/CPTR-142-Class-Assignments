@@ -3,8 +3,8 @@
  * Exercise: Tree Structure
  *
  * File Name:   tree.cpp
- * Username:  	?
- * Username:  	?
+ * Username:  	hartjo
+ * Username:  	fairka
  * Course:      CPTR 142
  *
  */
@@ -39,12 +39,16 @@ void Node::addLevels(int levels) {
 
 void Node::print(string indent) {
   // TODO: Print this node's value on a line and then print each child
-}
+  cout << indent << value << endl;
+  for (int i = 0; i < children.size(); ++i) {
+      children.at(i)->print(indent + "  ");
+  }
+  }
 
-int main() {
-  srand(0);
-  Node *root = new Node;
-  root->addLevels(3);
-  root->print("");
-  return 0;
-}
+  int main() {
+    srand(0);
+    Node *root = new Node;
+    root->addLevels(3);
+    root->print("");
+    return 0;
+  }

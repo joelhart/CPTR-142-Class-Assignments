@@ -3,8 +3,8 @@
  * Exercise: Graph Structure
  *
  * File Name:   graph.cpp
- * Username:  	?
- * Username:  	?
+ * Username:  	hartjo
+ * Username:  	fairka
  * Course:      CPTR 142
  *
  */

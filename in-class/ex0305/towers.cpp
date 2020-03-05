@@ -3,8 +3,8 @@
  * Exercise: Towers of Hanoi
  *
  * File Name:   towers.cpp
- * Username:  	?
- * Username:  	?
+ * Username:  	hartjo
+ * Username:  	fairka
  * Course:      CPTR 142
  *
  */
@@ -57,21 +57,31 @@ void print(string ring) {
     }
 }
 
-/*
-moveTower(disks, source, destination, temporary)
-    IF disks == 0, THEN:
-        return
-    ELSE:
-        move all but one disk from source to temporary using destination as spare
-        move one disk from source to destination
-        print current layout
-        move all but one disk from temporary to destination using source as spare
-    END IF
-*/
+
+// void moveTower(int disks, source, destination, temporary){
+//     if (disks == 0) {
+//         return
+//     } else {
+//     ELSE:
+//         move all but one disk from source to temporary using destination as spare
+//         move one disk from source to destination
+//         print current layout
+//         move all but one disk from temporary to destination using source as spare
+//     END IF
+//     }
+// }
+
 void moveTower(int disks, vector<string> &source, vector<string> &destination, vector<string> &temporary) {
     // TODO: implement recursive function as described above in comments
-
-}
+if (disks == 0) {
+        return;
+    } else {
+        moveTower(disks - 1, source, temporary, destination); 
+            moveDisk(source, destination);
+            print();
+            moveTower(disks - 1, temporary, destination, source);
+        }
+    }
 
 void moveDisk(vector<string> &source, vector<string> &destination) {
     int i = indexOfTopDisk(source);
