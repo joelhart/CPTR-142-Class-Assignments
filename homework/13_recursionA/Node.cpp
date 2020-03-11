@@ -3,9 +3,9 @@
  * Homework: Grand Tour
  *
  * File Name:   Node.cpp
- * Username:  	?
+ * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        ?
+ * Date:        3/9/20
  *
  */
 
@@ -43,21 +43,42 @@ void Node::print() {
 int Node::costOfPath(deque<Node *> path) {
   // remove the current node from the front of the path
 
+  path.pop_front();
+
   // if nothing more, then return cost of zero
 
-  // return cost to next node plus cost from there to end
+  if (path.size() == 0) {
+
+    return 0;
+
+  } else {
+
+    return costOfPath(path);
+
+    // return cost to next node plus cost from there to end
+  }
   return 42;
 }
 
 void Node::printPath(deque<Node *> path) {
   // print the current label
 
+  path.front()->print();
+
   // remove the current node from the front of the path
+
+  path.pop_front();
 
   // if something more, then print it (recursion)
 
-    // print a dash, then recurse to print remaining path
+  // print a dash, then recurse to print remaining path
 
+  if (path.size() > 0) {
+
+    cout << "-";
+
+    printPath(path);
+  }
 }
 
 // add to a vector of paths leading back home
