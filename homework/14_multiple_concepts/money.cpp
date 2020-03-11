@@ -5,9 +5,10 @@
  * File Name:   money.cpp
  * Username:      hartjo
  * Course:      CPTR 142
- * Date:        3/9
+ * Date:        3/10
  *
  */
+#include <iostream>
 #include <stdexcept>
 #include <string>
 using namespace std;
@@ -33,12 +34,15 @@ void verifyIsMoney(string inputString) {
   }
 
   if (isdigit(inputString.at(1))) {
-
+    if (inputString.at(1) == '0') {
+      throw runtime_error("NOT MONEY");
+    }
   } else {
     throw runtime_error("NOT MONEY");
   }
   if (inputString.size() >= 2) {
-    for (int i = 2; i < inputString.size(); i++) {
+    int currSize = 1;
+    for (int i = 1; i < inputString.size(); i++) {
       if (isdigit(inputString.at(i))) {
         commaRoom--;
         digitCount++;
@@ -54,6 +58,10 @@ void verifyIsMoney(string inputString) {
       } else {
         throw runtime_error("NOT MONEY");
       }
+      currSize++;
     }
+  }
+  if ((digitCount < 3) && (inputString.size() > 3)) {
+    throw runtime_error("NOT MONEY");
   }
 }
