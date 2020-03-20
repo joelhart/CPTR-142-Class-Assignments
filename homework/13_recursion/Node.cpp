@@ -3,18 +3,16 @@
  * Homework: Grand Tour
  *
  * File Name:   Node.cpp
- * Username:  	?
+ * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        ?
+ * Date:        3/19/20
  *
  */
-#include "Node.h"
-#include <algorithm>
-#include <deque>
-#include <iostream> // for cin and cout
-#include <map>
-using namespace std;
 
+#include <algorithm> // for find()
+#include <iostream>  // for cin and cout
+using namespace std;
+#include "Node.h"
 
 // static variable to hold the next label
 char Node::nextLabel = 'A';
@@ -42,34 +40,73 @@ void Node::print() {
   }
 }
 
-// return a map of cost and path from `this` to each of the remaining nodes
-map<int, deque<Node *>> Node::costsAndPaths(deque<Node *> remaining,
-                                            string indent) {
-  // define a variable to hold the full result
+int Node::costOfPath(deque<Node *> path) {
+  // remove the current node from the front of the path
 
-  // visit each link from `this`
+  path.pop_front();
 
-  // try to find the current link in the remaining list
+  // if nothing more, then return cost of zero
 
-  // if the link is not yet visited (that is, it is part of the remaining
-  // nodes), then we can proceed
+  if (path.size() == 0) {
 
-  // have we reached a base case where this link is all that remains to be
-  // visited?
+    return 0;
+  }
 
-  // if so, add this link with its cost to the result
+  Node *front = path.front();
 
-  // else, time for recursion!
+  return linkAndCostPairs.at(front) + front->costOfPath(path);
 
-  // remove the current link from `remaining` since it is being visited now
+  // return cost to next node plus cost from there to end
+}
 
-  // search from the link for the remaining nodes using recursion
+void Node::printPath(deque<Node *> path) {
+  // print the current label
 
-  // add the current link and cost to each of the partial results from the
-  // recursive call
+  cout << label;
+  flush(cout);
 
-  // add the current link back to `remaining` so it will be searched from other
-  // links
+  // remove the current node from the front of the path
 
-  // return the full result
+  path.pop_front();
+
+  // if something more, then print it (recursion)
+
+  // print a dash, then recurse to print remaining path
+
+  if (path.size() > 0) {
+
+    cout << "-";
+
+    Node *front = path.front();
+    front->printPath(path);
+  }
+}
+
+// add to a vector of paths leading back home
+void Node::findPaths(deque<Node *> currentPath, vector<deque<Node *>> &allPaths,
+                     string indent) {
+  // cout << indent << "findPaths() - starting at " << label << endl;
+
+  // BASE CASE 1: if `this` is not home but part of the current path, do nothing
+  for (int i = 1; i < currentPath.size(); i++) {
+    if (currentPath.at(i) == this) {
+      return;
+    }
+  }
+
+  // we are visiting a new node, so add `this` to end of the current path
+
+  currentPath.push_back(this);
+
+  // BASE CASE 2: if we left home and got back, add currentPath to allPaths
+  if (this == currentPath.front() && currentPath.size() > 1) {
+    allPaths.push_back(currentPath);
+    return;
+  }
+
+  // RECURSION: visit each child (link) and add any discovered paths
+  for (auto child : linkAndCostPairs) {
+    Node *childNode = child.first;
+    childNode->findPaths(currentPath, allPaths, indent + " ");
+  }
 }
