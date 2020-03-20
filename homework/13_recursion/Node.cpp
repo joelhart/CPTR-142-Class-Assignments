@@ -13,6 +13,9 @@
 #include <iostream>  // for cin and cout
 using namespace std;
 #include "Node.h"
+#include <vector>
+
+int Node::costOfPath(deque<Node *> path)
 
 // static variable to hold the next label
 char Node::nextLabel = 'A';
