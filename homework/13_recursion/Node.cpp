@@ -3,9 +3,9 @@
  * Homework: Grand Tour
  *
  * File Name:   Node.cpp
- * Username:  	bronco
+ * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        3/8/20
+ * Date:        3/18/20
  *
  */
 
@@ -13,7 +13,6 @@
 #include <iostream>  // for cin and cout
 using namespace std;
 #include "Node.h"
-#include <vector>
 
 // static variable to hold the next label
 char Node::nextLabel = 'A';
