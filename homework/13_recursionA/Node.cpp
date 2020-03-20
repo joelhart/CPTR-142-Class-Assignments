@@ -5,7 +5,7 @@
  * File Name:   Node.cpp
  * Username:  	hartjo
  * Course:      CPTR 142
- * Date:        3/9/20
+ * Date:        3/18/20
  *
  */
 
@@ -50,20 +50,20 @@ int Node::costOfPath(deque<Node *> path) {
   if (path.size() == 0) {
 
     return 0;
-
-  } else {
-
-    return costOfPath(path);
-
-    // return cost to next node plus cost from there to end
   }
-  return 42;
+
+  Node *front = path.front();
+
+  return linkAndCostPairs.at(front) + front->costOfPath(path);
+
+  // return cost to next node plus cost from there to end
 }
 
 void Node::printPath(deque<Node *> path) {
   // print the current label
 
-  path.front()->print();
+  cout << label;
+  flush(cout);
 
   // remove the current node from the front of the path
 
@@ -77,20 +77,36 @@ void Node::printPath(deque<Node *> path) {
 
     cout << "-";
 
-    printPath(path);
+    Node *front = path.front();
+    front->printPath(path);
   }
 }
 
 // add to a vector of paths leading back home
 void Node::findPaths(deque<Node *> currentPath, vector<deque<Node *>> &allPaths,
                      string indent) {
-  cout << indent << "findPaths() - starting at " << label << endl;
+  // cout << indent << "findPaths() - starting at " << label << endl;
 
   // BASE CASE 1: if `this` is not home but part of the current path, do nothing
+  for (int i = 1; i < currentPath.size(); i++) {
+    if (currentPath.at(i) == this) {
+      return;
+    }
+  }
 
   // we are visiting a new node, so add `this` to end of the current path
 
+  currentPath.push_back(this);
+
   // BASE CASE 2: if we left home and got back, add currentPath to allPaths
+  if (this == currentPath.front() && currentPath.size() > 1) {
+    allPaths.push_back(currentPath);
+    return;
+  }
 
   // RECURSION: visit each child (link) and add any discovered paths
+  for (auto child : linkAndCostPairs) {
+    Node *childNode = child.first;
+    childNode->findPaths(currentPath, allPaths, indent + " ");
+  }
 }
