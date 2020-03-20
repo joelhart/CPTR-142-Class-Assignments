@@ -3,9 +3,9 @@
  * Homework: Grand Tour
  *
  * File Name:   Node.cpp
- * Username:  	hartjo
+ * Username:  	bronco
  * Course:      CPTR 142
- * Date:        3/19/20
+ * Date:        3/8/20
  *
  */
 
@@ -14,8 +14,6 @@
 using namespace std;
 #include "Node.h"
 #include <vector>
-
-int Node::costOfPath(deque<Node *> path)
 
 // static variable to hold the next label
 char Node::nextLabel = 'A';
